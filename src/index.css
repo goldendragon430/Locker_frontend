@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "mono-bold";
+  src: url("../src/assets/fonts/ProtoMono-Bold.otf");
+}
+
+@font-face {
+  font-family: "mono-light";
+  src: url("../src/assets/fonts/ProtoMono-Light.otf");
+}
+
+@font-face {
+  font-family: "mono-regular";
+  src: url("../src/assets/fonts/ProtoMono-Regular.otf");
+}
+
+.remove-arrow::-webkit-inner-spin-button,
+.remove-arrow::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.remove-arrow {
+  -moz-appearance: textfield;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+  -webkit-box-shadow: inset 0 0 1px rgb(0, 0, 0);
+  background-color: rgb(10, 10, 10);
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 1px rgb(0, 0, 0);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 0 100px rgb(128, 128, 128);
+}
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(#f5f3f4);
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: #f5f3f4;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.1em solid #2c2c2c;
+  /* border-radius: 50%; */
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]:checked {
+  border: 0.1em solid #f5f3f4;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  /* border-radius: 50%; */
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(rgb(190, 21, 21));
+  /* Windows High Contrast Mode */
+  background-color: #f5f3f4;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
